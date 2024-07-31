@@ -1,0 +1,94 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+}
+
+.winning-line {
+    position: absolute;
+    background-color: red;
+    z-index: 1;
+}
+
+.horizontal-line {
+    height: 4px;
+    width: calc(100% + 20px); /* Adjusted for border offset */
+    left: -10px; /* Center line between cells */
+}
+
+.vertical-line {
+    width: 4px;
+    height: calc(100% + 20px); /* Adjusted for border offset */
+    top: -10px; /* Center line between cells */
+}
+
+.diagonal-line {
+    width: 141.4px; /* sqrt(100^2 + 100^2) */
+    height: 4px;
+    transform-origin: center;
+    left: -10px; /* Center line between cells */
+}
+
+.game-info {
+    font-size: 1.2em;
+}
+
+#restartButton {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#restartButton:hover {
+    background-color: #45a049;
+}
+
+#gameStatus {
+    margin-top: 10px;
+    color: #333;
+}
